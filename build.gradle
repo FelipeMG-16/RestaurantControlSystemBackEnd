@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.10'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.administracionRestaurante'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.0.5'
+	
+	//JPA (Persistencia de nuestros datos
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	//MySQL Driver (Para conectar nuestro proyecto con una base de datos
+	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+	implementation 'com.mysql:mysql-connector-j:8.0.31'
+	
+	//dependencia para el JWT
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
